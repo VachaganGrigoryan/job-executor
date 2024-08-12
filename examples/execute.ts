@@ -1,11 +1,8 @@
-// Description: Example to demonstrate how to use NazarExecutor
-
-
-import {JobQueue, NazarExecutor} from "../src";
+import {JobQueue, NazarAsyncExecutor} from "../src";
 import {JobHandlerExample} from "./handler.ts";
 
 const jobQueue = new JobQueue<string>();
-const executor = new NazarExecutor<string>(jobQueue, JobHandlerExample);
+const executor = new NazarAsyncExecutor<string>(jobQueue, JobHandlerExample);
 
 executor.start();
 
